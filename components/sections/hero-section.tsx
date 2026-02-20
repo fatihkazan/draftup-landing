@@ -6,20 +6,20 @@ import { Sparkles, ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-20 relative">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 pb-16 sm:pb-20 relative">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/50 via-transparent to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-3xl mx-auto">
         {/* Badge - customize your announcement */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/80 border border-zinc-800 mb-8">
-          <Sparkles className="w-4 h-4 text-zinc-400" />
-          <span className="text-sm text-zinc-400">New: Turn approved proposals into invoices in one click</span>
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-zinc-900/80 border border-zinc-800 mb-6 sm:mb-8">
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-400 shrink-0" />
+          <span className="text-xs sm:text-sm text-zinc-400">New: Turn approved proposals into invoices in one click</span>
         </div>
 
         {/* Headline - customize your value proposition */}
-        <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight mb-6">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
           <span className="text-zinc-100 block">Send Proposals.</span>
           <span className="bg-gradient-to-r from-zinc-500 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
             Get Paid. Repeat.
@@ -27,7 +27,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subheadline - describe your product */}
-        <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
+        <p className="text-base sm:text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed text-balance px-0">
           Draftup helps agencies and freelancers create professional proposals, track invoices, and close deals faster — all in one place.
         </p>
 
@@ -46,8 +46,8 @@ export function HeroSection() {
         </div>
 
         {/* Social proof */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <div className="flex items-center gap-4">
+        <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <div className="flex -space-x-3">
               <img
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"

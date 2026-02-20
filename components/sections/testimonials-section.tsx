@@ -76,32 +76,32 @@ const integrations = [
 
 export function TestimonialsSection() {
   return (
-    <section id="faq" className="px-6 py-24 bg-zinc-900/30">
+    <section id="faq" className="px-4 sm:px-6 py-16 sm:py-24 bg-zinc-900/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="flex flex-col items-center justify-center max-w-xl mx-auto mb-12"
+          className="flex flex-col items-center justify-center max-w-xl mx-auto mb-8 sm:mb-12"
         >
           <div className="border border-zinc-800 py-1.5 px-4 rounded-full text-sm text-zinc-400">FAQ</div>
 
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-zinc-100 mt-6 text-center tracking-tight">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-100 mt-4 sm:mt-6 text-center tracking-tight">
             Frequently asked questions
           </h2>
-          <p className="text-center mt-4 text-zinc-500 text-lg text-balance">
+          <p className="text-center mt-3 sm:mt-4 text-zinc-500 text-base sm:text-lg text-balance px-2">
             Quick answers about proposals, invoices, and getting paid with Draftup.
           </p>
         </motion.div>
 
-        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+        <div className="flex justify-center gap-4 sm:gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[500px] sm:max-h-[600px] md:max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
         </div>
 
-        <div className="mt-16 pt-16 border-t border-zinc-800/50">
+        <div className="mt-10 sm:mt-16 pt-10 sm:pt-16 border-t border-zinc-800/50">
           <p className="text-center text-sm text-zinc-500 mb-8">Powered by tools you trust</p>
           <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
             <motion.div

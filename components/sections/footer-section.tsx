@@ -18,11 +18,11 @@ const footerLinks = {
 
 export function FooterSection() {
   return (
-    <footer className="px-6 py-16 border-t border-zinc-900">
+    <footer className="px-4 sm:px-6 py-12 sm:py-16 border-t border-zinc-900">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="font-display text-xl font-semibold text-zinc-100">
               Draftup
             </Link>
@@ -75,7 +75,7 @@ export function FooterSection() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="pt-6 sm:pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p className="text-sm text-zinc-600">© {new Date().getFullYear()} Draftup. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-zinc-500 hover:text-zinc-300 transition-colors" aria-label="GitHub">

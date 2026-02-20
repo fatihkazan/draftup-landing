@@ -4,9 +4,9 @@ import { LiquidCtaButton } from "@/components/buttons/liquid-cta-button"
 
 export function CtaSection() {
   return (
-    <section className="px-6 py-24">
+    <section className="px-4 sm:px-6 py-16 sm:py-24">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-zinc-100 mb-6">Ready to send your next proposal?</h2>
+        <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-100 mb-4 sm:mb-6">Ready to send your next proposal?</h2>
         <p className="text-lg text-zinc-500 mb-10 text-balance">
           Draftup helps you move from proposal to invoice to payment without losing momentum. Set it up once, reuse it forever.
         </p>

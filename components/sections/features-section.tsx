@@ -17,7 +17,7 @@ const integrationLogos = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="px-6 py-24">
+    <section id="features" className="px-4 sm:px-6 py-16 sm:py-24">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -36,7 +36,7 @@ export function FeaturesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-3">
           {/* Card 1 - Analytics (wider - 3 cols) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,7 +257,7 @@ export function FeaturesSection() {
                   <p className="font-heading font-semibold text-zinc-100">Payment Follow-up</p>
                 </div>
                 <p className="text-zinc-500 text-sm mb-5">Automated reminders that keep you professional—and get you paid.</p>
-                <div className="grid grid-cols-8 gap-2 mt-auto">
+                <div className="grid grid-cols-4 sm:grid-cols-8 gap-2 mt-auto">
                   {integrationLogos.map((logo, i) => (
                     <motion.div
                       key={logo.name}

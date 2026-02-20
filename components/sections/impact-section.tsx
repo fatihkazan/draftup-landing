@@ -7,7 +7,7 @@ const metrics = [
 
 export function ImpactSection() {
   return (
-    <section id="how-it-works" className="px-6 py-24 bg-zinc-900/20">
+    <section id="how-it-works" className="px-4 sm:px-6 py-16 sm:py-24 bg-zinc-900/20">
       <div className="max-w-5xl mx-auto">
         {/* Impact Section Header */}
         <div className="text-center mb-12">
@@ -21,11 +21,11 @@ export function ImpactSection() {
         </div>
 
         {/* Metrics Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {metrics.map((metric) => (
             <div
               key={metric.label}
-              className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/50 hover:bg-zinc-900/80 transition-all duration-300 group text-center relative overflow-hidden"
+              className="p-5 sm:p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/50 hover:border-zinc-700/50 hover:bg-zinc-900/80 transition-all duration-300 group text-center relative overflow-hidden"
             >
               {/* Subtle gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

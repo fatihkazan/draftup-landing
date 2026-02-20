@@ -80,12 +80,12 @@ export function PricingSection() {
   const [isYearly, setIsYearly] = useState(false)
 
   return (
-    <section id="pricing" className="px-6 py-24">
+    <section id="pricing" className="px-4 sm:px-6 py-16 sm:py-24">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4">Pricing</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
             Simple, transparent pricing
           </h2>
           <p className="text-zinc-500 max-w-xl mx-auto text-balance text-lg mb-8">
@@ -117,13 +117,13 @@ export function PricingSection() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {plans.map((plan) => {
             const price = isYearly ? plan.priceYearly : plan.priceMonthly
             return (
               <div
                 key={plan.name}
-                className={`relative p-8 rounded-2xl border flex flex-col h-full ${
+                className={`relative p-6 sm:p-8 rounded-2xl border flex flex-col h-full ${
                   plan.highlighted ? "bg-zinc-100 border-zinc-100" : "bg-zinc-900/50 border-zinc-800/50"
                 }`}
               >
