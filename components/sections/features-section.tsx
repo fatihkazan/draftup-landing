@@ -1,19 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Zap, BarChart3, Layers, ArrowRight, Command } from "lucide-react"
+import { Zap, BarChart3, Layers, Command } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-
-const integrationLogos = [
-  { name: "Day 1" },
-  { name: "Day 3" },
-  { name: "Day 7" },
-  { name: "Day 14" },
-  { name: "Day 21" },
-  { name: "Final" },
-  { name: "Custom" },
-  { name: "Pause" },
-]
 
 export function FeaturesSection() {
   return (
@@ -60,87 +49,45 @@ export function FeaturesSection() {
                 <p className="text-zinc-500 text-sm mb-5">
                   Build polished proposals with templates, scope blocks, and pricing tables.
                 </p>
-                <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 overflow-hidden">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+                <div className="rounded-xl border border-zinc-800 bg-[#1a1a1a] p-4">
+                  <div className="rounded-lg border border-zinc-700 bg-zinc-900/70 p-3">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div>
+                        <p className="text-zinc-300 text-xs">Proposal</p>
+                        <p className="text-zinc-100 text-sm font-semibold">Website Redesign</p>
+                      </div>
+                      <span className="text-[10px] font-medium px-2 py-1 rounded-full bg-[#22C55E]/20 text-[#22C55E] border border-[#22C55E]/40">
+                        Approved
+                      </span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <motion.div
-                        className="flex items-center gap-1.5"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        <div className="w-2 h-2 rounded-full bg-zinc-400" />
-                        <span className="text-xs text-zinc-500">Sent</span>
-                      </motion.div>
-                      <motion.div
-                        className="flex items-center gap-1.5"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        <div className="w-2 h-2 rounded-full bg-zinc-600" />
-                        <span className="text-xs text-zinc-500">Approved</span>
-                      </motion.div>
+                    <div className="flex items-baseline justify-between mb-3">
+                      <p className="text-zinc-500 text-xs">Total</p>
+                      <p className="text-zinc-100 text-lg font-bold">$4,800</p>
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between mb-1">
+                        <p className="text-zinc-500 text-[11px]">Completion</p>
+                        <p className="text-zinc-400 text-[11px]">72%</p>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-zinc-800 overflow-hidden">
+                        <div className="h-full w-[72%] rounded-full bg-[#22C55E]" />
+                      </div>
+                    </div>
+                    <div className="mt-3 flex gap-1.5">
+                      {["Draft", "Sent", "Approved"].map((state) => (
+                        <span
+                          key={state}
+                          className={`text-[10px] px-1.5 py-0.5 rounded border ${
+                            state === "Approved"
+                              ? "bg-[#22C55E]/20 text-[#22C55E] border-[#22C55E]/40"
+                              : "bg-zinc-800 text-zinc-400 border-zinc-700"
+                          }`}
+                        >
+                          {state}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  {/* Animated metrics row */}
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    {[
-                      { label: "Templates", value: "12", change: "+3" },
-                      { label: "Avg approval", value: "<24h", change: "faster" },
-                      { label: "Win rate", value: "18%", change: "+4%" },
-                    ].map((metric, i) => (
-                      <motion.div
-                        key={metric.label}
-                        className="bg-zinc-900/50 rounded-lg p-2.5"
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + i * 0.1 }}
-                      >
-                        <p className="text-zinc-500 text-xs mb-1">{metric.label}</p>
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-zinc-100 font-semibold text-sm">{metric.value}</span>
-                          <motion.span
-                            className="text-zinc-400 text-xs"
-                            animate={{ opacity: [0.5, 1, 0.5] }}
-                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                          >
-                            {metric.change}
-                          </motion.span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  {/* Animated bar chart */}
-                  <div className="flex items-end gap-1.5 h-16">
-                    {[35, 55, 40, 75, 50, 85, 60, 70, 45, 90, 65, 80].map((h, i) => (
-                      <motion.div
-                        key={i}
-                        className="flex-1 bg-gradient-to-t from-zinc-700 to-zinc-500 rounded-sm origin-bottom"
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: h / 100 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.5 + i * 0.04, ease: "easeOut" }}
-                        whileHover={{ scaleY: 1, transition: { duration: 0.2 } }}
-                      />
-                    ))}
-                  </div>
-                  {/* Animated line underneath */}
-                  <motion.div
-                    className="h-px bg-gradient-to-r from-transparent via-zinc-600 to-transparent mt-3"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.8 }}
-                  />
                 </div>
               </CardContent>
             </Card>
@@ -167,26 +114,34 @@ export function FeaturesSection() {
                   <p className="font-heading font-semibold text-zinc-100">Invoice Tracking</p>
                 </div>
                 <p className="text-zinc-500 text-sm mb-5">Know what’s sent, viewed, paid, or overdue in real time.</p>
-                <div className="mt-auto">
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <motion.span
-                      className="text-4xl font-display font-bold text-zinc-100"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                    >
-                      Live
-                    </motion.span>
-                    <span className="text-zinc-500 text-sm">status updates</span>
-                  </div>
-                  <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-zinc-500 to-zinc-300 rounded-full"
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-                    />
+                <div className="rounded-xl border border-zinc-800 bg-[#1a1a1a] p-3 mt-auto">
+                  <div className="space-y-2">
+                    {[
+                      { client: "Acme Co", amount: "$1,250", status: "Paid" },
+                      { client: "North Studio", amount: "$860", status: "Pending" },
+                      { client: "Atlas Labs", amount: "$2,100", status: "Overdue" },
+                    ].map((invoice) => (
+                      <div
+                        key={invoice.client}
+                        className="rounded-md border border-zinc-700 bg-zinc-900/70 p-2.5 flex items-center justify-between gap-2"
+                      >
+                        <div>
+                          <p className="text-zinc-100 text-xs font-medium">{invoice.client}</p>
+                          <p className="text-zinc-400 text-[11px]">{invoice.amount}</p>
+                        </div>
+                        <span
+                          className={`text-[10px] px-2 py-0.5 rounded-full border ${
+                            invoice.status === "Paid"
+                              ? "bg-[#22C55E]/20 text-[#22C55E] border-[#22C55E]/40"
+                              : invoice.status === "Pending"
+                                ? "bg-amber-500/15 text-amber-300 border-amber-500/30"
+                                : "bg-red-500/15 text-red-300 border-red-500/30"
+                          }`}
+                        >
+                          {invoice.status}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </CardContent>
@@ -213,24 +168,22 @@ export function FeaturesSection() {
                   <p className="font-heading font-semibold text-zinc-100">Client Management</p>
                 </div>
                 <p className="text-zinc-500 text-sm mb-5">Keep contacts, notes, and deal history organized in one place.</p>
-                <div className="flex justify-center gap-2 mt-auto">
-                  {["CRM", "Notes"].map((key, i) => (
-                    <motion.div
-                      key={key}
-                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-800/80 border border-zinc-700/50 shadow-lg"
-                      initial={{ y: 0 }}
-                      animate={{ y: [0, -4, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        delay: i * 0.15,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatDelay: 2,
-                      }}
-                      whileHover={{ scale: 1.1, y: -4 }}
-                    >
-                      <span className="text-zinc-300 font-mono text-lg">{key}</span>
-                    </motion.div>
-                  ))}
+                <div className="rounded-xl border border-zinc-800 bg-[#1a1a1a] p-4 mt-auto">
+                  <div className="rounded-lg border border-zinc-700 bg-zinc-900/70 p-3">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-full bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center text-[#22C55E] text-sm font-semibold">
+                        AJ
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-zinc-100 text-sm font-semibold truncate">Ava Johnson</p>
+                        <p className="text-zinc-400 text-xs truncate">North Studio</p>
+                      </div>
+                    </div>
+                    <div className="rounded-md border border-zinc-700 bg-zinc-800/60 p-2.5 flex items-center justify-between">
+                      <p className="text-zinc-400 text-xs">Revenue</p>
+                      <p className="text-[#22C55E] text-sm font-semibold">$24,300</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -257,27 +210,26 @@ export function FeaturesSection() {
                   <p className="font-heading font-semibold text-zinc-100">Payment Follow-up</p>
                 </div>
                 <p className="text-zinc-500 text-sm mb-5">Automated reminders that keep you professional—and get you paid.</p>
-                <div className="grid grid-cols-4 sm:grid-cols-8 gap-2 mt-auto">
-                  {integrationLogos.map((logo, i) => (
-                    <motion.div
-                      key={logo.name}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-                      whileHover={{ scale: 1.15, y: -2 }}
-                      className="aspect-square rounded-lg border border-zinc-800 bg-zinc-800/50 flex items-center justify-center cursor-pointer"
-                    >
-                      <div className="w-5 h-5 rounded bg-zinc-700" />
-                    </motion.div>
-                  ))}
+                <div className="rounded-xl border border-[#22C55E]/35 bg-[#1a1a1a] p-4 mt-auto">
+                  <div className="rounded-lg border border-[#22C55E]/40 bg-[#22C55E]/12 p-4">
+                    <p className="text-[#86efac] text-xs font-medium mb-1">Invoiced Today</p>
+                    <p className="text-zinc-100 text-2xl font-bold mb-4">$3,460</p>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        className="px-3 py-1.5 rounded-md bg-[#22C55E] text-zinc-950 text-xs font-semibold"
+                      >
+                        Send Reminder
+                      </button>
+                      <button
+                        type="button"
+                        className="px-3 py-1.5 rounded-md border border-[#22C55E]/50 text-[#22C55E] text-xs font-semibold"
+                      >
+                        View Queue
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <motion.button
-                  whileHover={{ x: 6 }}
-                  className="mt-4 flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
-                >
-                  See follow-up sequences <ArrowRight className="w-4 h-4" />
-                </motion.button>
               </CardContent>
             </Card>
           </motion.div>
