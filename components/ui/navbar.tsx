@@ -42,7 +42,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#"
+            href="https://app.draftup.co/login"
             className="ml-2 px-4 py-1.5 text-sm rounded-full border border-primary/50 text-primary font-medium hover:border-primary/80 hover:bg-primary/10 transition-colors"
           >
             Login
@@ -87,7 +87,7 @@ export function Navbar() {
               ))}
               <div className="mt-4 pt-4 border-t border-zinc-800 space-y-2">
                 <Link
-                  href="#"
+                  href="https://app.draftup.co/login"
                   onClick={() => setOpen(false)}
                   className="block px-4 py-3 text-base rounded-lg border border-primary/50 text-primary font-medium hover:border-primary/80 hover:bg-primary/10 transition-colors"
                 >
