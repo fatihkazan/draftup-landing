@@ -9,7 +9,7 @@ const plans = [
     name: "Freelancer",
     priceMonthly: 9,
     priceYearly: 7,
-    checkoutUrl: "https://draftup.lemonsqueezy.com/checkout/buy/929f6b32-b7e5-4364-b8e8-f3f923d75cb2",
+    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarHsqFyT92DhNEduv8O?quantity=1",
     features: [
       "1 user",
       "10 invoices/month",
@@ -25,7 +25,7 @@ const plans = [
     name: "Starter",
     priceMonthly: 19,
     priceYearly: 15,
-    checkoutUrl: "https://draftup.lemonsqueezy.com/checkout/buy/c4f2026b-d6d0-4426-9d7f-40aa3bb0feeb",
+    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIEtZehknqLuAmhlgp?quantity=1",
     features: [
       "3 users",
       "25 invoices/month",
@@ -41,7 +41,7 @@ const plans = [
     name: "Growth",
     priceMonthly: 39,
     priceYearly: 31,
-    checkoutUrl: "https://draftup.lemonsqueezy.com/checkout/buy/782eb6ff-2248-4ed3-8998-6f1b92f74712",
+    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIXmeRgdp5EDnXn9lP?quantity=1",
     features: [
       "10 users",
       "150 invoices/month",
@@ -60,7 +60,7 @@ const plans = [
     name: "Scale",
     priceMonthly: 79,
     priceYearly: 63,
-    checkoutUrl: "https://draftup.lemonsqueezy.com/checkout/buy/700085c2-d105-4c79-8200-cdd78ea01cf7",
+    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIjRzRih1zOVDHA6ex?quantity=1",
     features: [
       "50 users",
       "Unlimited invoices",
