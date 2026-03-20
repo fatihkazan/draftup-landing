@@ -9,7 +9,8 @@ const plans = [
     name: "Freelancer",
     priceMonthly: 9,
     priceYearly: 7,
-    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarHsqFyT92DhNEduv8O?quantity=1",
+    checkoutUrlMonthly: "https://checkout.dodopayments.com/buy/pdt_0NarHsqFyT92DhNEduv8O?quantity=1",
+    checkoutUrlYearly: "https://checkout.dodopayments.com/buy/pdt_0NarI3IFBkxZXmgdRRYvr?quantity=1",
     features: [
       "1 user",
       "10 invoices/month",
@@ -25,7 +26,8 @@ const plans = [
     name: "Starter",
     priceMonthly: 19,
     priceYearly: 15,
-    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIEtZehknqLuAmhlgp?quantity=1",
+    checkoutUrlMonthly: "https://checkout.dodopayments.com/buy/pdt_0NarIEtZehknqLuAmhlgp?quantity=1",
+    checkoutUrlYearly: "https://checkout.dodopayments.com/buy/pdt_0NarIJmbS0BV1Ccm6AIOH?quantity=1",
     features: [
       "3 users",
       "25 invoices/month",
@@ -41,7 +43,8 @@ const plans = [
     name: "Growth",
     priceMonthly: 39,
     priceYearly: 31,
-    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIXmeRgdp5EDnXn9lP?quantity=1",
+    checkoutUrlMonthly: "https://checkout.dodopayments.com/buy/pdt_0NarIXmeRgdp5EDnXn9lP?quantity=1",
+    checkoutUrlYearly: "https://checkout.dodopayments.com/buy/pdt_0NarIf9c6LWQaHbj3fPBI?quantity=1",
     features: [
       "10 users",
       "150 invoices/month",
@@ -60,7 +63,8 @@ const plans = [
     name: "Scale",
     priceMonthly: 79,
     priceYearly: 63,
-    checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NarIjRzRih1zOVDHA6ex?quantity=1",
+    checkoutUrlMonthly: "https://checkout.dodopayments.com/buy/pdt_0NarIjRzRih1zOVDHA6ex?quantity=1",
+    checkoutUrlYearly: "https://checkout.dodopayments.com/buy/pdt_0NarIok4U4CFqP4YX2D2B?quantity=1",
     features: [
       "50 users",
       "Unlimited invoices",
@@ -174,7 +178,7 @@ export function PricingSection() {
 
                 {/* CTA */}
                 <Link
-                  href={plan.checkoutUrl}
+                  href={isYearly ? plan.checkoutUrlYearly : plan.checkoutUrlMonthly}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3 px-6 text-center rounded-full font-medium text-sm transition-colors mt-auto bg-[#22C55E] text-black hover:bg-[#1ea34f]"
